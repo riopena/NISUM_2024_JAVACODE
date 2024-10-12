@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "45485078-e18a-4e3c-8dc2-b78dbef7c65f",
+		"name": "NISUM JAVA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12999276"
+	},
+	"item": [
+		{
+			"name": "Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan \",\r\n    \"email\": \"juan@rodriguez.com\",\r\n    \"password\": \"hunter2\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"citycode\": \"1\",\r\n            \"contrycode\": \"57\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authorization/registro",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authorization",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/authorization/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authorization",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKdWFuIFJvcmRyaWd1ZXoiLCJpYXQiOjE3Mjg3NDYxOTAsImV4cCI6MTcyODc0NzYzMH0.h26fE5jPeBMO0Uhc25wMoZ3-utm-pUDRljqap4-x7BQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserbyId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpbyIsImlhdCI6MTcyODc0NjczNSwiZXhwIjoxNzI4NzQ4MTc1fQ.dCcEZMVAbrRWVJKLCTDlN63P2J0araWOlJ9paGo1mjs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
